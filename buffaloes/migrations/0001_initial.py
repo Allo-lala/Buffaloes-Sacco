@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
                 ('date_of_transaction', models.DateTimeField(auto_now=True, null=True)),
                 ('withdrawn_by', models.CharField(max_length=200, null=True)),
                 ('status', models.CharField(choices=[('COMPLETE', 'COMPLETE'), ('PENDING', 'PENDING')], max_length=200)),
-                ('member_name', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='teleka.Member')),
+                ('member_name', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='buffaloes.Member')),
             ],
         ),
         migrations.CreateModel(
@@ -73,7 +73,7 @@ class Migration(migrations.Migration):
                 ('repay_in', models.CharField(max_length=200, null=True)),
                 ('paid_by', models.CharField(max_length=200, null=True)),
                 ('status', models.CharField(choices=[('COMPLETE', 'COMPLETE'), ('PENDING', 'PENDING')], max_length=200)),
-                ('member_name', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='teleka.Member')),
+                ('member_name', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='buffaloes.Member')),
             ],
         ),
         migrations.CreateModel(
@@ -92,7 +92,7 @@ class Migration(migrations.Migration):
                 ('reason', models.TextField(max_length=1000, null=True)),
                 ('collateral1_attachements', models.ImageField(upload_to='uploads/Collatreals/% Y/% m/% /d')),
                 ('collateral2_attachements', models.ImageField(upload_to='uploads/Collatreals/% Y/% m/% /d')),
-                ('member_name', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='teleka.Member')),
+                ('member_name', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='buffaloes.Member')),
             ],
         ),
         migrations.CreateModel(
@@ -104,7 +104,7 @@ class Migration(migrations.Migration):
                 ('date_of_transaction', models.DateTimeField(auto_now=True, null=True)),
                 ('deposited_by', models.CharField(max_length=200, null=True)),
                 ('status', models.CharField(choices=[('COMPLETE', 'COMPLETE'), ('PENDING', 'PENDING')], max_length=200)),
-                ('member_name', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='teleka.Member')),
+                ('member_name', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='buffaloes.Member')),
             ],
         ),
     ]

@@ -26,8 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'teleka.apps.TelekaConfig',
+    'buffaloes.apps.BuffaloesConfig',
     'crispy_forms',
+    'crispy_bootstrap4',
     'whitenoise.runserver_nostatic',
 ]
 
