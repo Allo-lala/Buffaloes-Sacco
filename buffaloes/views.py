@@ -26,7 +26,7 @@ from django.contrib import messages # used for delete
 
 
 class CustomLoginView(LoginView):
-    template_name = 'teleka/login.html'
+    template_name = 'buffaloes/login.html'
     fields = '__all__'
     redirect_authenticated_user = True
 
