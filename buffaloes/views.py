@@ -35,7 +35,7 @@ class CustomLoginView(LoginView):
 
 
 class RegisterPage(FormView):
-    template_name = 'teleka/register.html'
+    template_name = 'buffaloes/register.html'
     form_class = UserCreationForm
     redirect_authenticated_user = True
     success_url = reverse_lazy('dashboard')
@@ -59,7 +59,7 @@ class DashboardView(LoginRequiredMixin,ListView):
     model = Withdraw
     model = Deposit
     context_object_name = 'dashboard'
-    template_name = 'teleka/dashboard.html'
+    template_name = 'buffaloes/dashboard.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -81,7 +81,7 @@ class DashboardView(LoginRequiredMixin,ListView):
 class CreateMember(LoginRequiredMixin,SuccessMessageMixin,CreateView):
     model = Member
     fields = '__all__'
-    template_name = 'teleka/createMember.html'
+    template_name = 'buffaloes/createMember.html'
     success_url = reverse_lazy('view-members')
 
     def form_valid(self, form):
@@ -95,7 +95,7 @@ class ViewMembers(LoginRequiredMixin, SuccessMessageMixin,ListView):
     model= User
     model = Member
     context_object_name = 'members'
-    template_name = 'teleka/viewMembers.html'
+    template_name = 'buffaloes/viewMembers.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -115,7 +115,7 @@ class MemberUpdate(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
        "next_of_keen_last_name", "next_of_keen_phone", "next_of_keen_relationship",
        "status"
     ]
-    template_name = 'teleka/createMember.html'
+    template_name = 'buffaloes/createMember.html'
     success_url = reverse_lazy('view-members')
     success_message = "Member Updated successfully !"
 
@@ -124,7 +124,7 @@ class MemberDelete(LoginRequiredMixin, DeleteView):
     model = Member
     context_object_name = 'members'
     success_url = reverse_lazy('view-members')
-    template_name = 'teleka/memberConfrim.html'
+    template_name = 'buffaloes/memberConfrim.html'
 
     def get_success_url(self):
         messages.success(self.request, "Member Deleted Succesfully !")
@@ -135,7 +135,7 @@ class MemberDetails(LoginRequiredMixin, DetailView):
     model = Loan
     model = Member
     context_object_name = 'member'
-    template_name = 'teleka/memberDetails.html'
+    template_name = 'buffaloes/memberDetails.html'
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
@@ -152,7 +152,7 @@ class CreateDeposit(LoginRequiredMixin,SuccessMessageMixin,CreateView):
 
     model = Deposit
     fields = '__all__'
-    template_name = 'teleka/createDeposit.html'
+    template_name = 'buffaloes/createDeposit.html'
     success_url = reverse_lazy('view-deposits')
 
     def form_valid(self, form):
@@ -167,7 +167,7 @@ class ViewDeposit(LoginRequiredMixin, SuccessMessageMixin,ListView):
     model= User
     model = Deposit
     context_object_name = 'deposits'
-    template_name = 'teleka/viewDeposits.html'
+    template_name = 'buffaloes/viewDeposits.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -183,7 +183,7 @@ class DepositUpdate(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     fields = [
        "member_name", "account_number", "amount", "deposited_by", "status"
     ]
-    template_name = 'teleka/createDeposit.html'
+    template_name = 'buffaloes/createDeposit.html'
     success_url = reverse_lazy('view-deposits')
     success_message = "Deposit Updated Successfully !"
 
@@ -192,7 +192,7 @@ class DepositDelete(LoginRequiredMixin, DeleteView):
     model = Deposit
     context_object_name = 'deposit'
     success_url = reverse_lazy('view-deposits')
-    template_name = 'teleka/depositConfirm.html'
+    template_name = 'buffaloes/depositConfirm.html'
 
     def get_success_url(self):
         messages.success(self.request, "Deposit Deleted Succesfully !")
@@ -203,7 +203,7 @@ class CreateWithdraw(LoginRequiredMixin,SuccessMessageMixin,CreateView):
 
     model = Withdraw
     fields = '__all__'
-    template_name = 'teleka/createWithdraw.html'
+    template_name = 'buffaloes/createWithdraw.html'
     success_url = reverse_lazy('view-withdraws')
 
     def form_valid(self, form):
@@ -217,7 +217,7 @@ class ViewWithdraw(LoginRequiredMixin, SuccessMessageMixin,ListView):
     model= User
     model = Withdraw
     context_object_name = 'withdraws'
-    template_name = 'teleka/viewWithdraws.html'
+    template_name = 'buffaloes/viewWithdraws.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -233,7 +233,7 @@ class WithdrawUpdate(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     fields = [
        "member_name", "account_number", "amount", "withdrawn_by", "status"
     ]
-    template_name = 'teleka/createWithdraw.html'
+    template_name = 'buffaloes/createWithdraw.html'
     success_url = reverse_lazy('view-withdraws')
     success_message = "Withdraw Updated Successfully !"
 
@@ -242,7 +242,7 @@ class WithdrawDelete(LoginRequiredMixin, DeleteView):
     model = Withdraw
     context_object_name = 'withdraws'
     success_url = reverse_lazy('view-withdraws')
-    template_name = 'teleka/withdrawConfirm.html'
+    template_name = 'buffaloes/withdrawConfirm.html'
 
     def get_success_url(self):
         messages.success(self.request, "Withdraw Deleted Succesfully !")
@@ -255,7 +255,7 @@ class CreateLoan(LoginRequiredMixin,SuccessMessageMixin,CreateView):
 
     model = Loan
     fields = '__all__'
-    template_name = 'teleka/createLoan.html'
+    template_name = 'buffaloes/createLoan.html'
     success_url = reverse_lazy('view-loans')
 
     def form_valid(self, form):
@@ -269,7 +269,7 @@ class ViewLoan(LoginRequiredMixin, SuccessMessageMixin,ListView):
     model= User
     model = Loan
     context_object_name = 'loans'
-    template_name = 'teleka/viewLoan.html'
+    template_name = 'buffaloes/viewLoan.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -285,7 +285,7 @@ class LoanUpdate(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
        "member_name", "account_number", "amount",
        "intrest_rate", "repay_in", "status", "collateral1", "collateral2", "reason"
     ]
-    template_name = 'teleka/createLoan.html'
+    template_name = 'buffaloes/createLoan.html'
     success_url = reverse_lazy('view-loans')
     success_message = "Loan Updated Successfully !"
 
@@ -294,7 +294,7 @@ class LoanDelete(LoginRequiredMixin, DeleteView):
     model = Loan
     context_object_name = 'loans'
     success_url = reverse_lazy('view-loans')
-    template_name = 'teleka/confrimLoan.html'
+    template_name = 'buffaloes/confrimLoan.html'
 
     def get_success_url(self):
         messages.success(self.request, "Loan Deleted Succesfully !")
@@ -305,7 +305,7 @@ class PendingLoan(LoginRequiredMixin,ListView):
     model= User
     model = Loan
     context_object_name = 'pending_loans'
-    template_name = 'teleka/pendingLoans.html'
+    template_name = 'buffaloes/pendingLoans.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -319,7 +319,7 @@ class CompletedLoan(LoginRequiredMixin,ListView):
     model= User
     model = Loan
     context_object_name = 'completed_loans'
-    template_name = 'teleka/completedLoans.html'
+    template_name = 'buffaloes/completedLoans.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

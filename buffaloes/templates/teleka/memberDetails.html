@@ -1,8 +1,8 @@
-{% extends 'teleka/main.html' %}
+{% extends 'buffaloes/main.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
-{% include 'teleka/header.html' %}
+{% include 'buffaloes/header.html' %}
 <style>
     body {
         color: #6F8BA4;
@@ -155,8 +155,8 @@
                 <div class="col">
                     <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
                         <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="{% url 'view-members' %}">View Members</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Member Profile</li>
+                            <li class="breadcrumb-item"><a href="{% url 'view-members' %}">View Players</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Player Profile</li>
                         </ol>
                     </nav>
                 </div>
@@ -253,7 +253,7 @@
     <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022<a
-                    href="https://www.bootstrapdash.com/" target="_blank">Alvin Mutebi</a></span>
+                    href="https://www.bootstrapdash.com/" target="_blank">buffaloes</a></span>
 
         </div>
     </footer>
